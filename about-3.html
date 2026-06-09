@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About. Preethika Chennareddy</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --sand: #F7F3ED;
+    --sand-dark: #EEE8DF;
+    --charcoal: #1C1C1E;
+    --charcoal-light: #636366;
+    --slate: #4A6FA5;
+    --slate-light: #7A9CC4;
+    --text-secondary: #3A3A3C;
+    --text-muted: #8E8E93;
+    --serif: 'Cormorant Garamond', Georgia, serif;
+    --sans: 'DM Sans', sans-serif;
+  }
+
+  html { scroll-behavior: smooth; }
+  body { background: var(--sand); color: var(--charcoal); font-family: var(--sans); font-weight: 300; overflow-x: hidden; }
+
+  /* Nav */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    padding: 1.5rem 4rem;
+    display: flex; justify-content: space-between; align-items: center;
+  }
+  .nav-logo { font-family: var(--serif); font-size: 1.1rem; font-weight: 400; color: var(--charcoal); text-decoration: none; letter-spacing: 0.05em; }
+  .nav-back {
+    font-size: 0.78rem; letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--text-muted); text-decoration: none;
+    display: flex; align-items: center; gap: 0.5rem;
+    transition: color 0.3s ease;
+  }
+  .nav-back::before { content: '←'; font-size: 1rem; }
+  .nav-back:hover { color: var(--charcoal); }
+
+  /* ── 1. HERO ── */
+  .hero {
+  margin-top: 5rem;
+  display: grid;
+  grid-template-columns: 55% 45%;
+  min-height: 100vh;
+  align-items: center;
+  gap: 4rem;
+  padding: 0 4rem;
+}
+
+.hero-text {
+  padding: 0;
+}
+
+.hero-text p {
+  max-width: 550px;
+}
+
+.hero-photo {
+  position: relative;
+  height: 700px;
+  overflow: hidden;
+  background: var(--sand-dark);
+}
+
+.hero-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+}
+
+@media (max-width: 900px) {
+  .hero {
+    grid-template-columns: 1fr;
+    padding: 2rem;
+    min-height: auto;
+  }
+
+  .hero-photo {
+    height: 500px;
+  }
+}
+  /* ── 2. WIDE PHOTO ── */
+  .wide-photo {
+    width: 100%; aspect-ratio: 21/8;
+    background: var(--sand-dark);
+    position: relative; overflow: hidden;
+  }
+  .wide-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+  /* ── 3. WHO AM I ── */
+  .about-grid {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 5rem; padding: 6rem 4rem;
+    background: var(--charcoal);
+  }
+  .about-label {
+    font-size: 0.68rem; letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--slate-light); margin-bottom: 1rem;
+  }
+  .about-title {
+    font-family: var(--serif);
+    font-size: 1.9rem; font-weight: 300;
+    color: var(--sand); margin-bottom: 1rem; line-height: 1.2;
+  }
+  .about-text { font-size: 0.9rem; line-height: 1.9; color: rgba(247,243,237,0.6); }
+
+  /* ── 4. LOVES ── */
+  .loves { padding: 6rem 4rem; background: var(--sand-dark); }
+  .loves-title {
+    font-family: var(--serif);
+    font-size: clamp(1.8rem, 3vw, 2.5rem);
+    font-weight: 300; color: var(--charcoal); margin-bottom: 3rem;
+  }
+  .loves-title em { font-style: italic; color: var(--slate); }
+  .loves-grid { display: grid; grid-template-columns: repeat(6, 1fr); gap: 1.5rem; }
+  .loves-grid .love-item:nth-child(1) { grid-column: span 2; }
+  .loves-grid .love-item:nth-child(2) { grid-column: span 2; }
+  .loves-grid .love-item:nth-child(3) { grid-column: span 2; }
+  .loves-grid .love-item:nth-child(4) { grid-column: 2 / span 2; }
+  .loves-grid .love-item:nth-child(5) { grid-column: 4 / span 2; }
+  .love-item {
+    padding: 1.75rem;
+    border: 1px solid rgba(28,28,30,0.08);
+    background: var(--sand);
+    transition: transform 0.3s ease, border-color 0.3s ease;
+  }
+  .love-item:hover { transform: translateY(-4px); border-color: rgba(74,111,165,0.3); }
+  .love-name { font-family: var(--serif); font-size: 1.15rem; color: var(--charcoal); margin-bottom: 0.4rem; }
+  .love-desc { font-size: 0.82rem; line-height: 1.7; color: var(--text-muted); }
+
+  /* ── 5. PHOTO STRIP ── */
+  .photo-strip {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: 1rem; padding: 4rem;
+    background: var(--sand);
+  }
+  .photo-block {
+    background: var(--sand-dark);
+    position: relative;
+    overflow: hidden;
+  }
+  .photo-block img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  .photo-block-label {
+    position: absolute; bottom: 0.75rem; left: 0.75rem;
+    font-family: var(--serif); font-size: 0.8rem;
+    font-style: italic; color: rgba(28,28,30,0.4);
+  }
+
+  /* Footer strip */
+  .back-strip {
+    padding: 3rem 4rem; background: var(--charcoal);
+    display: flex; justify-content: space-between; align-items: center;
+  }
+  .back-strip p { font-family: var(--serif); font-size: 1.1rem; font-style: italic; color: rgba(247,243,237,0.45); }
+  .back-btn {
+    padding: 0.75rem 2rem;
+    border: 1px solid rgba(247,243,237,0.2);
+    color: var(--sand); text-decoration: none;
+    font-size: 0.78rem; letter-spacing: 0.1em; text-transform: uppercase;
+    transition: background 0.3s ease, border-color 0.3s ease;
+  }
+  .back-btn:hover { background: rgba(247,243,237,0.08); border-color: rgba(247,243,237,0.4); }
+
+  /* Reveal */
+  .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.8s cubic-bezier(0.4,0,0.2,1), transform 0.8s cubic-bezier(0.4,0,0.2,1); }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+  .reveal-delay-1 { transition-delay: 0.1s; }
+  .reveal-delay-2 { transition-delay: 0.2s; }
+  .reveal-delay-3 { transition-delay: 0.3s; }
+
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: translateY(0); } }
+  @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+  @media (max-width: 900px) {
+    nav { padding: 1.5rem 2rem; }
+    .hero { grid-template-columns: 1fr; }
+    .hero-photo { aspect-ratio: 4/3; }
+    .hero-text { padding: 3rem 2rem; }
+    .about-grid { grid-template-columns: 1fr; padding: 4rem 2rem; gap: 2.5rem; }
+    .loves { padding: 4rem 2rem; }
+    .loves-grid { grid-template-columns: 1fr; }
+    .photo-strip { grid-template-columns: 1fr 1fr; padding: 2rem; }
+    .back-strip { padding: 2rem; }
+  }
+  @media (max-width: 600px) {
+    .photo-strip { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">
+    <svg width="38" height="38" viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="19" cy="19" r="18" stroke="#4A6FA5" stroke-width="0.8"/>
+      <text x="19" y="26" text-anchor="middle" font-family="Cormorant Garamond, Georgia, serif" font-size="18" font-weight="300" fill="#4A6FA5">PC</text>
+    </svg>
+  </a>
+  <a href="index.html" class="nav-back">Back to Portfolio</a>
+</nav>
+
+<!-- 1. Hi I'm Preethika -->
+<div class="hero">
+
+  <div class="hero-text">
+    <p class="hero-label">The parts of me that don't need to be optimized.</p>
+
+    <h1>
+      Hi, I'm Preethika.<br>
+      <em>Beyond the resume.</em>
+    </h1>
+
+    <p>
+      I'm a builder, a curious mind, and someone who finds beauty in both a
+      well-designed data pipeline and a perfectly framed photograph.
+      When I'm not deep in code, I'm probably exploring a new city,
+      planning my next adventure, or capturing moments through a camera lens.
+    </p>
+
+  </div>
+
+  <div class="hero-photo">
+    <img src="images/hero2.jpg" alt="Preethika Chennareddy">
+  </div>
+
+</div>
+<!-- 3. Who am I / What drives me -->
+<div class="about-grid">
+  <div class="reveal">
+    <p class="about-label">Who I am</p>
+    <h2 class="about-title">A people person who happens to love data.</h2>
+    <p class="about-text">I grew up in Hyderabad, moved to New York for grad school, and somewhere along the way became obsessed with the idea that technology should feel human. I care deeply about building things that actually matter, and I bring that same attention to everything I do, on screen and off it.</p>
+  </div>
+  <div class="reveal reveal-delay-2">
+    <p class="about-label">What drives me</p>
+    <h2 class="about-title">Curiosity, always.</h2>
+    <p class="about-text">I'm drawn to problems that seem impossible until suddenly they aren't. Whether it's a model that won't converge, a pipeline at scale, or a photo composition that just isn't landing. I love the process of figuring things out. That restlessness is what keeps me going, and honestly, what makes it all worthwhile.</p>
+  </div>
+</div>
+
+<!-- 4. A few things I love -->
+<div class="loves">
+  <h2 class="loves-title">A few things I <em>love</em></h2>
+  <div class="loves-grid">
+    <div class="love-item reveal reveal-delay-1">
+      <p class="love-name">Photography</p>
+      <p class="love-desc">Mostly on my iPhone, but the eye is always on. I love finding something worth capturing in the most ordinary moments.</p>
+    </div>
+    <div class="love-item reveal reveal-delay-2">
+      <p class="love-name">Learning</p>
+      <p class="love-desc">I'm genuinely excited by new ideas. A paper, a YouTube rabbit hole, a podcast. I'll learn from anywhere.</p>
+    </div>
+    <div class="love-item reveal reveal-delay-3">
+      <p class="love-name">Good Coffee</p>
+      <p class="love-desc">A non-negotiable. New York has been very kind on this front. There's always a new café to find and a good cup to sit with.</p>
+    </div>
+    <div class="love-item reveal reveal-delay-2">
+      <p class="love-name">Design</p>
+      <p class="love-desc">Head of Design and Marketing at NYU GISA and NYU Tandon Google Developer Club. Canva is basically a second home.</p>
+    </div>
+    <div class="love-item reveal reveal-delay-3">
+      <p class="love-name">Building things</p>
+      <p class="love-desc">Not just in code. Furniture too. I love the feeling of making something from nothing with your hands.</p>
+    </div>
+  </div>
+</div>
+
+<!-- 5. Other images -->
+<div class="photo-strip" style="grid-template-columns: repeat(5, 1fr); gap: 1rem; padding: 4rem; background: var(--sand);">
+  <div class="photo-block reveal reveal-delay-1">
+    <img src="images/gallery1.jpg" alt="Snowy Building">  
+  </div>
+  <div class="photo-block reveal reveal-delay-2">
+    <img src="images/gallery2.jpg" alt="Washington Square">
+  </div>
+  <div class="photo-block reveal reveal-delay-3">
+    <img src="images/gallery3.jpg" alt="Flower shop">
+  </div>
+  <div class="photo-block reveal reveal-delay-1">
+    <img src="images/gallery4.jpg" alt="Bridge">
+  </div>
+  <div class="photo-block reveal reveal-delay-2">
+    <img src="images/gallery5.jpg" alt="Snowy street">
+  </div>
+</div>
+
+<!-- Quote -->
+<div style="padding: 6rem 4rem; text-align: center;">
+  <p style="font-family: var(--serif); font-size: clamp(1.5rem, 3vw, 2.5rem); font-weight: 300; font-style: italic; color: var(--charcoal); max-width: 700px; margin: 0 auto 1rem; line-height: 1.4;">"The details are not the details. They make the design."</p>
+  <p style="font-size: 0.72rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--slate);">Charles Eames</p>
+</div>
+
+<!-- Footer -->
+<div style="padding: 3rem 4rem; background: var(--charcoal); display: flex; justify-content: center;">
+  <a href="index.html" class="back-btn">Back to Portfolio</a>
+</div>
+
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.1, rootMargin: '0px 0px -30px 0px' });
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+  const nav = document.querySelector('nav');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 60) {
+      nav.style.background = 'rgba(247,243,237,0.92)';
+      nav.style.backdropFilter = 'blur(12px)';
+      nav.style.borderBottom = '1px solid rgba(28,28,30,0.07)';
+    } else {
+      nav.style.background = 'transparent';
+      nav.style.backdropFilter = 'none';
+      nav.style.borderBottom = 'none';
+    }
+  });
+</script>
+</body>
+</html>
