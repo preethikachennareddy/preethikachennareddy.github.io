@@ -274,16 +274,25 @@
   #projects { background: var(--sand); }
   .projects-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1px;
-    background: rgba(28,28,30,0.08);
-  }
-  .project-card {
+    grid-template-columns: repeat(6, 1fr);
+    gap: 5px;
     background: var(--sand);
-    padding: 2rem;
+  }
+  /* Top row */
+  .projects-grid .project-card:nth-child(1) { grid-column: span 2; }
+  .projects-grid .project-card:nth-child(2) { grid-column: span 2; }
+  .projects-grid .project-card:nth-child(3) { grid-column: span 2; }
+
+  /* Bottom row centered */
+  .projects-grid .project-card:nth-child(4) { grid-column: 2 / span 2; }
+  .projects-grid .project-card:nth-child(5) { grid-column: 4 / span 2; }
+  .project-card {
+    background: var(--sand-dark);
+    padding: 1.75rem;
     position: relative;
     overflow: hidden;
     transition: background 0.4s ease;
+    border: 1px solid rgba(28,28,30,0.08);
     cursor: pointer;
   }
   .project-card::before {
@@ -321,7 +330,7 @@
     font-size: 0.67rem;
     letter-spacing: 0.08em;
     text-transform: uppercase;
-    color: var(--text-muted);
+    color: var(--slate-light);
     border: 1px solid rgba(28,28,30,0.12);
     padding: 0.2rem 0.6rem;
     transition: color 0.4s ease, border-color 0.4s ease;
@@ -684,11 +693,6 @@
       <h3 class="project-title">PracticeLeet - AI Mock Technical Interview Coach</h3>
       <p class="project-desc">Simulates FAANG-style coding interviews with AI-generated questions, automated evaluation, and personalized feedback.</p>
       <div class="project-tags"><span>Python</span><span>React</span><span>JavaScript</span><span>Gen AI</span><span>REST API</span></div>
-    </div>
-    <div class="project-card reveal-right reveal-delay-3" onclick="window.open('https://github.com/preethikachennareddy','_blank')">
-      <h3 class="project-title">Log Analytics Pipeline</h3>
-      <p class="project-desc">500GB/day pipeline using AWS Boto3 and Elasticsearch with structured parsing and real-time anomaly flagging, cutting incident response by 17%.</p>
-      <div class="project-tags"><span>Python</span><span>AWS</span><span>Elasticsearch</span><span>Kafka</span><span>Spark</span></div>
     </div>
   </div>
 </section>
