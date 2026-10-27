@@ -246,6 +246,30 @@
     margin-bottom: 0.2rem;
   }
   .exp-location { font-size: 0.75rem; color: rgba(247,243,237,0.35); }
+
+  /* Company Logo Styling (Standalone / Bigger) */
+  .exp-company-header {
+    margin-top: 0.4rem;
+    margin-bottom: 0.6rem;
+    display: flex;
+    align-items: center;
+  }
+  .company-logo-img {
+    height: 40px;
+    width: auto;
+    max-width: 160px;
+    object-fit: contain;
+    object-position: left center;
+    border-radius: 4px;
+    display: block;
+    opacity: 0.9;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+  }
+  .exp-item:hover .company-logo-img {
+    opacity: 1;
+    transform: translateY(-2px);
+  }
+
   .exp-role {
     font-family: var(--serif);
     font-size: 1.4rem;
@@ -607,114 +631,122 @@
   </div>
 </section>
 
-<!-- Experience Section for index.html -->
-<section id="experience" class="section">
+<!-- Experience -->
+<section id="experience">
   <div class="section-header reveal">
     <span class="section-num">01</span>
     <h2 class="section-title">Experience</h2>
     <div class="section-line"></div>
   </div>
-
   <div class="exp-grid">
-
-    <!-- DaVita -->
-    <div class="exp-item reveal reveal-delay-1">
+    <!-- DaVita Kidney Care -->
+    <div class="exp-item">
       <div class="exp-left">
-        <p class="exp-period">Sep 2026 – Present</p>
-        <div class="exp-company-header" style="display: flex; align-items: center; gap: 10px; margin: 0.3rem 0;">
-          <img src="./images/davitalogo.jpg" alt="DaVita Logo" style="height: 24px; width: auto; object-fit: contain; border-radius: 3px;" />
-          <p class="exp-company" style="margin: 0;">DaVita Kidney Care</p>
+        <div class="reveal-left reveal-delay-1">
+          <p class="exp-period">Sep 2026 – Present</p>
+          <div class="exp-company-header">
+            <img src="./images/davitalogo.jpg" alt="DaVita Kidney Care" class="company-logo-img" />
+          </div>
+          <p class="exp-location">New York, NY</p>
         </div>
-        <p class="exp-location">New York, NY</p>
       </div>
       <div class="exp-right">
-        <p class="exp-role">Software Engineering Intern</p>
-        <ul class="exp-bullets">
-          <li>Engineered automated medical document processing microservices in Python (FastAPI) with GCP NLP APIs and regex parsers, reducing clinical record tagging time by 40% and routing over 10,000+ daily unstructured records.</li>
-          <li>Implemented automated integration testing suites using PyTest within GitHub Actions CI/CD pipelines, increasing test coverage to 88% and reducing pre-deployment schema validation errors by 25%.</li>
-        </ul>
+        <div class="reveal-right reveal-delay-2">
+          <p class="exp-role">Software Engineering Intern</p>
+          <ul class="exp-bullets">
+            <li>Engineered automated medical document processing microservices in Python (FastAPI) with GCP NLP APIs and regex parsers, reducing clinical record tagging time by 40% and routing over 10,000+ daily unstructured records.</li>
+            <li>Implemented automated integration testing suites using PyTest within GitHub Actions CI/CD pipelines, increasing test coverage to 88% and reducing pre-deployment schema validation errors by 25%.</li>
+          </ul>
+        </div>
       </div>
     </div>
-
-    <!-- NYU -->
-    <div class="exp-item reveal reveal-delay-2">
+    <!-- New York University -->
+    <div class="exp-item">
       <div class="exp-left">
-        <p class="exp-period">Sep 2024 – Present</p>
-        <div class="exp-company-header" style="display: flex; align-items: center; gap: 10px; margin: 0.3rem 0;">
-          <img src="./images/nyulogo.jpg" alt="NYU Logo" style="height: 24px; width: auto; object-fit: contain; border-radius: 3px;" />
-          <p class="exp-company" style="margin: 0;">New York University</p>
+        <div class="reveal-left reveal-delay-1">
+          <p class="exp-period">Sep 2024 – Present</p>
+          <div class="exp-company-header">
+            <img src="./images/nyulogo.jpg" alt="New York University" class="company-logo-img" />
+          </div>
+          <p class="exp-location">New York, NY</p>
         </div>
-        <p class="exp-location">New York, NY</p>
       </div>
       <div class="exp-right">
-        <p class="exp-role">Graduate Assistant, Data Analytics</p>
-        <ul class="exp-bullets">
-          <li>Built Python + SQL data pipelines processing multi-source student engagement data across 30+ departments, improving analytics turnaround by 35%.</li>
-          <li>Architected data governance standards and streamlined UI/UX interfaces, improving data quality and reproducibility.</li>
-          <li>Optimized ETL pipeline using Pandas and PowerBI standards, increasing reporting accuracy by 22%.</li>
-        </ul>
+        <div class="reveal-right reveal-delay-2">
+          <p class="exp-role">Graduate Assistant, Data Analytics</p>
+          <ul class="exp-bullets">
+            <li>Built Python + SQL data pipelines processing multi-source student engagement data across 30+ departments, improving analytics turnaround by 35%.</li>
+            <li>Architected data governance standards and streamlined UI/UX interfaces, improving data quality and reproducibility.</li>
+            <li>Optimized ETL pipeline using Pandas and PowerBI standards, increasing reporting accuracy by 22%.</li>
+          </ul>
+        </div>
       </div>
     </div>
-
-    <!-- Providence Global Center -->
-    <div class="exp-item reveal reveal-delay-1">
+    <!-- Providence Global Center - Data Engineer -->
+    <div class="exp-item">
       <div class="exp-left">
-        <p class="exp-period">Jul 2023 – Aug 2024</p>
-        <div class="exp-company-header" style="display: flex; align-items: center; gap: 10px; margin: 0.3rem 0;">
-          <img src="./images/providencelogo.jpg" alt="Providence Logo" style="height: 24px; width: auto; object-fit: contain; border-radius: 3px;" />
-          <p class="exp-company" style="margin: 0;">Providence Global Center</p>
+        <div class="reveal-left reveal-delay-1">
+          <p class="exp-period">Jul 2023 – Aug 2024</p>
+          <div class="exp-company-header">
+            <img src="./images/providencelogo.jpg" alt="Providence Global Center" class="company-logo-img" />
+          </div>
+          <p class="exp-location">Hyderabad, India</p>
         </div>
-        <p class="exp-location">Hyderabad, India</p>
       </div>
       <div class="exp-right">
-        <p class="exp-role">Data Engineer</p>
-        <ul class="exp-bullets">
-          <li>Built scalable pipelines and deployed predictive models (K-Means, Random Forest, LSTM) for real-time analytics, cutting manual monitoring by 24%.</li>
-          <li>Engineered Python/C++ backend services with Azure integrations, reducing downtime by 11%.</li>
-          <li>Developed RESTful APIs using Flask and FastAPI; explored LLM-based summarization and prompt design.</li>
-        </ul>
+        <div class="reveal-right reveal-delay-2">
+          <p class="exp-role">Data Engineer</p>
+          <ul class="exp-bullets">
+            <li>Built scalable pipelines and deployed predictive models (K-Means, Random Forest, LSTM) for real-time analytics, cutting manual monitoring by 24%.</li>
+            <li>Engineered Python/C++ backend services with Azure integrations, reducing downtime by 11%.</li>
+            <li>Developed RESTful APIs using Flask and FastAPI; explored LLM-based summarization and prompt design.</li>
+          </ul>
+        </div>
       </div>
     </div>
-
-    <!-- Providence Global Center Intern -->
-    <div class="exp-item reveal reveal-delay-2">
+    <!-- Providence Global Center - Data Engineer Intern -->
+    <div class="exp-item">
       <div class="exp-left">
-        <p class="exp-period">Jan 2023 – Jun 2023</p>
-        <div class="exp-company-header" style="display: flex; align-items: center; gap: 10px; margin: 0.3rem 0;">
-          <img src="./images/providencelogo.jpg" alt="Providence Logo" style="height: 24px; width: auto; object-fit: contain; border-radius: 3px;" />
-          <p class="exp-company" style="margin: 0;">Providence Global Center</p>
+        <div class="reveal-left reveal-delay-1">
+          <p class="exp-period">Jan 2023 – Jun 2023</p>
+          <div class="exp-company-header">
+            <img src="./images/providencelogo.jpg" alt="Providence Global Center" class="company-logo-img" />
+          </div>
+          <p class="exp-location">Hyderabad, India</p>
         </div>
-        <p class="exp-location">Hyderabad, India</p>
       </div>
       <div class="exp-right">
-        <p class="exp-role">Data Engineer Intern</p>
-        <ul class="exp-bullets">
-          <li>Created workflow automation tools using PowerApps and Python-Azure Functions, yielding a 30% efficiency gain.</li>
-          <li>Developed predictive maintenance microservices with scikit-learn on Azure ML, cutting outages by 25%.</li>
-          <li>Automated enterprise IT operations using PowerShell and Microsoft Graph API across Office 365.</li>
-        </ul>
+        <div class="reveal-right reveal-delay-2">
+          <p class="exp-role">Data Engineer Intern</p>
+          <ul class="exp-bullets">
+            <li>Created workflow automation tools using PowerApps and Python-Azure Functions, yielding a 30% efficiency gain.</li>
+            <li>Developed predictive maintenance microservices with scikit-learn on Azure ML, cutting outages by 25%.</li>
+            <li>Automated enterprise IT operations using PowerShell and Microsoft Graph API across Office 365.</li>
+          </ul>
+        </div>
       </div>
     </div>
-
     <!-- Persistent Systems -->
-    <div class="exp-item reveal reveal-delay-3">
+    <div class="exp-item">
       <div class="exp-left">
-        <p class="exp-period">Apr 2022 – Jun 2022</p>
-        <div class="exp-company-header" style="display: flex; align-items: center; gap: 10px; margin: 0.3rem 0;">
-          <img src="./images/persistentlogo.jpg" alt="Persistent Systems Logo" style="height: 24px; width: auto; object-fit: contain; border-radius: 3px;" />
-          <p class="exp-company" style="margin: 0;">Persistent Systems</p>
+        <div class="reveal-left reveal-delay-1">
+          <p class="exp-period">Apr 2022 – Jun 2022</p>
+          <div class="exp-company-header">
+            <img src="./images/persistentlogo.jpg" alt="Persistent Systems" class="company-logo-img" />
+          </div>
+          <p class="exp-location">Hyderabad, India</p>
         </div>
-        <p class="exp-location">Hyderabad, India</p>
       </div>
       <div class="exp-right">
-        <p class="exp-role">Python Developer Intern</p>
-        <ul class="exp-bullets">
-          <li>Re-architected a log analytics pipeline using Python, AWS Boto3, and Elasticsearch to process 500GB of logs daily, cutting incident response by 17%.</li>
-          <li>Built a distributed network monitoring system using Kafka and Spark, deployed on Kubernetes.</li>
-        </ul>
+        <div class="reveal-right reveal-delay-2">
+          <p class="exp-role">Python Developer Intern</p>
+          <ul class="exp-bullets">
+            <li>Re-architected a log analytics pipeline using Python, AWS Boto3, and Elasticsearch to process 500GB of logs daily, cutting incident response by 17%.</li>
+            <li>Built a distributed network monitoring system using Kafka and Spark, deployed on Kubernetes.</li>
+          </ul>
+        </div>
       </div>
     </div>
-
   </div>
 </section>
 
@@ -783,7 +815,7 @@
       </div>
     </div>
     <div class="edu-card reveal-right reveal-delay-2">
-      <p class="edu-degree">Bachelor of Technology in Computer Science &amp; Engineering</p>
+      <p class="edu-degree">Bachelor of Technology in Computer Science & Engineering</p>
       <p class="edu-school">G. Narayanamma Institute of Technology and Science</p>
       <p class="edu-meta">Hyderabad, India · 2019 – 2023</p>
       <div class="edu-accordion">
@@ -795,13 +827,13 @@
           <div class="edu-course-row"><span>Machine Learning</span></div>
           <div class="edu-course-row"><span>Artificial Intelligence</span></div>
           <div class="edu-course-row"><span>Data Structures</span></div>
-          <div class="edu-course-row"><span>Design &amp; Analysis of Algorithms</span></div>
+          <div class="edu-course-row"><span>Design & Analysis of Algorithms</span></div>
           <div class="edu-course-row"><span>Database Management Systems</span></div>
           <div class="edu-course-row"><span>Operating Systems</span></div>
           <div class="edu-course-row"><span>Computer Networks</span></div>
           <div class="edu-course-row"><span>Data Mining</span></div>
           <div class="edu-course-row"><span>Web Technologies</span></div>
-          <div class="edu-course-row"><span>Cryptography &amp; Network Security</span></div>
+          <div class="edu-course-row"><span>Cryptography & Network Security</span></div>
           <div class="edu-course-row"><span>Object Oriented Programming</span></div>
         </div>
       </div>
@@ -828,7 +860,7 @@
       </div>
     </div>
     <div class="reveal reveal-delay-2">
-      <p class="skill-group-title">AI &amp; ML</p>
+      <p class="skill-group-title">AI & ML</p>
       <div class="skill-pills">
         <span class="skill-pill">PyTorch</span><span class="skill-pill">TensorFlow</span>
         <span class="skill-pill">LangChain</span><span class="skill-pill">LangGraph</span>
@@ -849,7 +881,7 @@
       </div>
     </div>
     <div class="reveal reveal-delay-4">
-      <p class="skill-group-title">Cloud &amp; DevOps</p>
+      <p class="skill-group-title">Cloud & DevOps</p>
       <div class="skill-pills">
         <span class="skill-pill">AWS</span><span class="skill-pill">Azure</span>
         <span class="skill-pill">GCP</span><span class="skill-pill">Docker</span>
