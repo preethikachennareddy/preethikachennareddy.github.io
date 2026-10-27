@@ -93,18 +93,21 @@
   }
   .exp-item:hover { transform: translateY(-2px); border-color: rgba(74,111,165,0.3); }
   
-  /* Standardized Company Logo Styling */
+  /* Standardized Company Logo Styling with Dark Container */
   .exp-company-header { display: flex; align-items: center; gap: 12px; margin-bottom: 0.4rem; }
   .company-logo-img {
-    height: 26px;
+    height: 28px;
+    width: auto;
     max-width: 100px;
     object-fit: contain;
-    border-radius: 3px;
-    display: block;
-    opacity: 0.9;
+    background: #1C1C1E;
+    padding: 3px 6px;
+    border-radius: 4px;
+    display: inline-block;
+    opacity: 0.95;
     transition: opacity 0.3s ease, transform 0.3s ease;
   }
-  .exp-item:hover .company-logo-img { opacity: 1; transform: scale(1.03); }
+  .exp-item:hover .company-logo-img { opacity: 1; transform: scale(1.04); }
   .exp-company { font-family: var(--serif); font-size: 1.2rem; font-weight: 500; color: var(--charcoal); }
   .exp-period { font-size: 0.78rem; letter-spacing: 0.05em; color: var(--slate); margin-bottom: 0.2rem; }
   .exp-location { font-size: 0.75rem; color: var(--text-muted); }
@@ -226,7 +229,7 @@
   </div>
 </div>
 
-<!-- 2. EXPERIENCE SECTION WITH LOCAL LOGO IMAGES -->
+<!-- 2. EXPERIENCE SECTION WITH LOGO IMAGES -->
 <div class="exp-section">
   <h2 class="exp-title">Professional <em>Experience</em></h2>
   <div class="exp-grid">
@@ -236,7 +239,7 @@
       <div class="exp-left">
         <p class="exp-period">Sep 2026 – Present</p>
         <div class="exp-company-header">
-          <img src="images/davitalogo.jpg" alt="DaVita Logo" class="company-logo-img" />
+          <img src="./images/davitalogo.jpg" alt="DaVita Logo" class="company-logo-img" />
           <p class="exp-company">DaVita Kidney Care</p>
         </div>
         <p class="exp-location">New York, NY</p>
@@ -255,7 +258,7 @@
       <div class="exp-left">
         <p class="exp-period">Sep 2024 – Present</p>
         <div class="exp-company-header">
-          <img src="images/nyulogo.jpg" alt="NYU Logo" class="company-logo-img" />
+          <img src="./images/nyulogo.jpg" alt="NYU Logo" class="company-logo-img" />
           <p class="exp-company">New York University</p>
         </div>
         <p class="exp-location">New York, NY</p>
@@ -275,7 +278,7 @@
       <div class="exp-left">
         <p class="exp-period">Jul 2023 – Aug 2024</p>
         <div class="exp-company-header">
-          <img src="images/providencelogo.jpg" alt="Providence Logo" class="company-logo-img" />
+          <img src="./images/providencelogo.jpg" alt="Providence Logo" class="company-logo-img" />
           <p class="exp-company">Providence Global Center</p>
         </div>
         <p class="exp-location">Hyderabad, India</p>
@@ -295,7 +298,7 @@
       <div class="exp-left">
         <p class="exp-period">Jan 2023 – Jun 2023</p>
         <div class="exp-company-header">
-          <img src="images/providencelogo.jpg" alt="Providence Logo" class="company-logo-img" />
+          <img src="./images/providencelogo.jpg" alt="Providence Logo" class="company-logo-img" />
           <p class="exp-company">Providence Global Center</p>
         </div>
         <p class="exp-location">Hyderabad, India</p>
@@ -315,7 +318,7 @@
       <div class="exp-left">
         <p class="exp-period">Apr 2022 – Jun 2022</p>
         <div class="exp-company-header">
-          <img src="images/persistentlogo.jpg" alt="Persistent Systems Logo" class="company-logo-img" />
+          <img src="./images/persistentlogo.jpg" alt="Persistent Systems Logo" class="company-logo-img" />
           <p class="exp-company">Persistent Systems</p>
         </div>
         <p class="exp-location">Hyderabad, India</p>
