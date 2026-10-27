@@ -82,24 +82,31 @@
     opacity: 0; animation: fadeUp 0.9s 0.6s forwards;
   }
 
-  .placeholder {
-    position: absolute; inset: 0;
-    display: flex; flex-direction: column;
-    align-items: center; justify-content: center; gap: 0.75rem;
+  /* ── 2. EXPERIENCE SECTION WITH COMPANY LOGOS ── */
+  .exp-section { padding: 6rem 4rem; background: var(--sand); }
+  .exp-title { font-family: var(--serif); font-size: clamp(1.8rem, 3vw, 2.5rem); font-weight: 300; color: var(--charcoal); margin-bottom: 3rem; }
+  .exp-grid { display: flex; flex-direction: column; gap: 2.5rem; }
+  .exp-item {
+    display: grid; grid-template-columns: 220px 1fr; gap: 2rem;
+    padding: 2rem; border: 1px solid rgba(28,28,30,0.08); background: var(--sand-dark);
+    transition: transform 0.3s ease, border-color 0.3s ease;
   }
-  .placeholder svg { opacity: 0.2; }
-  .placeholder span {
-    font-size: 0.68rem; letter-spacing: 0.12em;
-    text-transform: uppercase; color: var(--text-muted);
+  .exp-item:hover { transform: translateY(-2px); border-color: rgba(74,111,165,0.3); }
+  
+  /* Company Header Styling & Monochrome Logo Filter */
+  .exp-company-header { display: flex; align-items: center; gap: 10px; margin-bottom: 0.4rem; }
+  .company-logo {
+    width: 22px; height: 22px; object-fit: contain;
+    filter: grayscale(100%) opacity(0.75);
+    transition: filter 0.3s ease;
   }
-
-  /* ── 2. WIDE PHOTO ── */
-  .wide-photo {
-    width: 100%; aspect-ratio: 21/8;
-    background: var(--sand-dark);
-    position: relative; overflow: hidden;
-  }
-  .wide-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .exp-item:hover .company-logo { filter: grayscale(0%) opacity(1); }
+  .exp-company { font-family: var(--serif); font-size: 1.2rem; font-weight: 500; color: var(--charcoal); }
+  .exp-period { font-size: 0.78rem; letter-spacing: 0.05em; color: var(--slate); margin-bottom: 0.2rem; }
+  .exp-location { font-size: 0.75rem; color: var(--text-muted); }
+  .exp-role { font-family: var(--serif); font-size: 1.3rem; color: var(--charcoal); margin-bottom: 0.75rem; }
+  .exp-bullets { list-style: disc; padding-left: 1.2rem; }
+  .exp-bullets li { font-size: 0.88rem; line-height: 1.7; color: var(--text-secondary); margin-bottom: 0.5rem; }
 
   /* ── 3. WHO AM I ── */
   .about-grid {
@@ -144,7 +151,7 @@
 
   /* ── 5. PHOTO STRIP ── */
   .photo-strip {
-    display: grid; grid-template-columns: repeat(3, 1fr);
+    display: grid; grid-template-columns: repeat(5, 1fr);
     gap: 1rem; padding: 4rem;
     background: var(--sand);
   }
@@ -158,26 +165,6 @@
     height: auto;
     display: block;
   }
-  .photo-block-label {
-    position: absolute; bottom: 0.75rem; left: 0.75rem;
-    font-family: var(--serif); font-size: 0.8rem;
-    font-style: italic; color: rgba(28,28,30,0.4);
-  }
-
-  /* Footer strip */
-  .back-strip {
-    padding: 3rem 4rem; background: var(--charcoal);
-    display: flex; justify-content: space-between; align-items: center;
-  }
-  .back-strip p { font-family: var(--serif); font-size: 1.1rem; font-style: italic; color: rgba(247,243,237,0.45); }
-  .back-btn {
-    padding: 0.75rem 2rem;
-    border: 1px solid rgba(247,243,237,0.2);
-    color: var(--sand); text-decoration: none;
-    font-size: 0.78rem; letter-spacing: 0.1em; text-transform: uppercase;
-    transition: background 0.3s ease, border-color 0.3s ease;
-  }
-  .back-btn:hover { background: rgba(247,243,237,0.08); border-color: rgba(247,243,237,0.4); }
 
   /* Reveal */
   .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.8s cubic-bezier(0.4,0,0.2,1), transform 0.8s cubic-bezier(0.4,0,0.2,1); }
@@ -187,21 +174,17 @@
   .reveal-delay-3 { transition-delay: 0.3s; }
 
   @keyframes fadeUp { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: translateY(0); } }
-  @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
 
   @media (max-width: 900px) {
     nav { padding: 1.5rem 2rem; }
     .hero { grid-template-columns: 1fr; }
     .hero-photo { aspect-ratio: 4/3; }
     .hero-text { padding: 3rem 2rem; }
+    .exp-item { grid-template-columns: 1fr; gap: 0.8rem; }
     .about-grid { grid-template-columns: 1fr; padding: 4rem 2rem; gap: 2.5rem; }
     .loves { padding: 4rem 2rem; }
     .loves-grid { grid-template-columns: 1fr; }
     .photo-strip { grid-template-columns: 1fr 1fr; padding: 2rem; }
-    .back-strip { padding: 2rem; }
-  }
-  @media (max-width: 600px) {
-    .photo-strip { grid-template-columns: 1fr; }
   }
 </style>
 </head>
@@ -217,7 +200,7 @@
   <a href="index.html" class="nav-back">Back to Portfolio</a>
 </nav>
 
-<!-- 1. Hi I'm Preethika -->
+<!-- 1. HERO -->
 <div class="hero">
   <div class="hero-text">
     <p class="hero-label">The parts of me that don't need to be optimized.</p>
@@ -229,7 +212,113 @@
   </div>
 </div>
 
-<!-- 3. Who am I / What drives me -->
+<!-- 2. EXPERIENCE WITH COMPANY LOGOS -->
+<div class="exp-section">
+  <h2 class="exp-title">Professional <em>Experience</em></h2>
+  <div class="exp-grid">
+    
+    <!-- DaVita -->
+    <div class="exp-item reveal reveal-delay-1">
+      <div class="exp-left">
+        <p class="exp-period">Sep 2026 – Present</p>
+        <div class="exp-company-header">
+          <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/davita.svg" alt="DaVita Logo" class="company-logo" onerror="this.style.display='none'" />
+          <p class="exp-company">DaVita Kidney Care</p>
+        </div>
+        <p class="exp-location">New York, NY</p>
+      </div>
+      <div class="exp-right">
+        <p class="exp-role">Software Engineering Intern</p>
+        <ul class="exp-bullets">
+          <li>Engineered automated medical document processing microservices in Python (FastAPI) with GCP NLP APIs and regex parsers, reducing clinical record tagging time by 40% and routing over 10,000+ daily unstructured records.</li>
+          <li>Implemented automated integration testing suites using PyTest within GitHub Actions CI/CD pipelines, increasing test coverage to 88% and reducing pre-deployment schema validation errors by 25%.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- NYU -->
+    <div class="exp-item reveal reveal-delay-2">
+      <div class="exp-left">
+        <p class="exp-period">Sep 2024 – Present</p>
+        <div class="exp-company-header">
+          <svg class="company-logo" viewBox="0 0 24 24" fill="var(--charcoal)"><path d="M12 2L1 7l11 5 9-4.091V17h2V7L12 2zm0 13l-8-3.636V17l8 3.636 8-3.636v-5.636L12 15z"/></svg>
+          <p class="exp-company">New York University</p>
+        </div>
+        <p class="exp-location">New York, NY</p>
+      </div>
+      <div class="exp-right">
+        <p class="exp-role">Graduate Assistant, Data Analytics</p>
+        <ul class="exp-bullets">
+          <li>Built Python + SQL data pipelines processing multi-source student engagement data across 30+ departments, improving analytics turnaround by 35%.</li>
+          <li>Architected data governance standards and streamlined UI/UX interfaces, improving data quality and reproducibility.</li>
+          <li>Optimized ETL pipeline using Pandas and PowerBI standards, increasing reporting accuracy by 22%.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Providence Global Center -->
+    <div class="exp-item reveal reveal-delay-1">
+      <div class="exp-left">
+        <p class="exp-period">Jul 2023 – Aug 2024</p>
+        <div class="exp-company-header">
+          <svg class="company-logo" viewBox="0 0 24 24" fill="var(--charcoal)"><path d="M12 2L2 7v10l10 5 10-5V7L12 2zm0 2.8L18.6 8 12 11.2 5.4 8 12 4.8zM4 9.3l7 3.5v6.9l-7-3.5V9.3zm16 6.9l-7 3.5v-6.9l7-3.5v6.9z"/></svg>
+          <p class="exp-company">Providence Global Center</p>
+        </div>
+        <p class="exp-location">Hyderabad, India</p>
+      </div>
+      <div class="exp-right">
+        <p class="exp-role">Data Engineer</p>
+        <ul class="exp-bullets">
+          <li>Built scalable pipelines and deployed predictive models (K-Means, Random Forest, LSTM) for real-time analytics, cutting manual monitoring by 24%.</li>
+          <li>Engineered Python/C++ backend services with Azure integrations, reducing downtime by 11%.</li>
+          <li>Developed RESTful APIs using Flask and FastAPI; explored LLM-based summarization and prompt design.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Providence Global Center Intern -->
+    <div class="exp-item reveal reveal-delay-2">
+      <div class="exp-left">
+        <p class="exp-period">Jan 2023 – Jun 2023</p>
+        <div class="exp-company-header">
+          <svg class="company-logo" viewBox="0 0 24 24" fill="var(--charcoal)"><path d="M12 2L2 7v10l10 5 10-5V7L12 2zm0 2.8L18.6 8 12 11.2 5.4 8 12 4.8zM4 9.3l7 3.5v6.9l-7-3.5V9.3zm16 6.9l-7 3.5v-6.9l7-3.5v6.9z"/></svg>
+          <p class="exp-company">Providence Global Center</p>
+        </div>
+        <p class="exp-location">Hyderabad, India</p>
+      </div>
+      <div class="exp-right">
+        <p class="exp-role">Data Engineer Intern</p>
+        <ul class="exp-bullets">
+          <li>Created workflow automation tools using PowerApps and Python-Azure Functions, yielding a 30% efficiency gain.</li>
+          <li>Developed predictive maintenance microservices with scikit-learn on Azure ML, cutting outages by 25%.</li>
+          <li>Automated enterprise IT operations using PowerShell and Microsoft Graph API across Office 365.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Persistent Systems -->
+    <div class="exp-item reveal reveal-delay-3">
+      <div class="exp-left">
+        <p class="exp-period">Apr 2022 – Jun 2022</p>
+        <div class="exp-company-header">
+          <svg class="company-logo" viewBox="0 0 24 24" fill="var(--charcoal)"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14.5v-9l6 4.5-6 4.5z"/></svg>
+          <p class="exp-company">Persistent Systems</p>
+        </div>
+        <p class="exp-location">Hyderabad, India</p>
+      </div>
+      <div class="exp-right">
+        <p class="exp-role">Python Developer Intern</p>
+        <ul class="exp-bullets">
+          <li>Re-architected a log analytics pipeline using Python, AWS Boto3, and Elasticsearch to process 500GB of logs daily, cutting incident response by 17%.</li>
+          <li>Built a distributed network monitoring system using Kafka and Spark, deployed on Kubernetes.</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- 3. WHO AM I -->
 <div class="about-grid">
   <div class="reveal">
     <p class="about-label">Who I am</p>
@@ -243,7 +332,7 @@
   </div>
 </div>
 
-<!-- 4. A few things I love -->
+<!-- 4. A FEW THINGS I LOVE -->
 <div class="loves">
   <h2 class="loves-title">A few things I <em>love</em></h2>
   <div class="loves-grid">
@@ -270,8 +359,8 @@
   </div>
 </div>
 
-<!-- 5. Other images -->
-<div class="photo-strip" style="grid-template-columns: repeat(5, 1fr); gap: 1rem; padding: 4rem; background: var(--sand);">
+<!-- 5. PHOTO STRIP -->
+<div class="photo-strip">
   <div class="photo-block reveal reveal-delay-1">
     <img src="images/gallery1.jpg" alt="Snowy Building">  
   </div>
