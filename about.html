@@ -82,7 +82,7 @@
     opacity: 0; animation: fadeUp 0.9s 0.6s forwards;
   }
 
-  /* ── 2. EXPERIENCE SECTION WITH COMPANY LOGOS ── */
+  /* ── 2. EXPERIENCE SECTION WITH CUSTOM LOGOS ── */
   .exp-section { padding: 6rem 4rem; background: var(--sand); }
   .exp-title { font-family: var(--serif); font-size: clamp(1.8rem, 3vw, 2.5rem); font-weight: 300; color: var(--charcoal); margin-bottom: 3rem; }
   .exp-grid { display: flex; flex-direction: column; gap: 2.5rem; }
@@ -93,14 +93,18 @@
   }
   .exp-item:hover { transform: translateY(-2px); border-color: rgba(74,111,165,0.3); }
   
-  /* Company Header Styling & Monochrome Logo Filter */
-  .exp-company-header { display: flex; align-items: center; gap: 10px; margin-bottom: 0.4rem; }
-  .company-logo {
-    width: 22px; height: 22px; object-fit: contain;
-    filter: grayscale(100%) opacity(0.75);
-    transition: filter 0.3s ease;
+  /* Standardized Company Logo Styling */
+  .exp-company-header { display: flex; align-items: center; gap: 12px; margin-bottom: 0.4rem; }
+  .company-logo-img {
+    height: 26px;
+    max-width: 100px;
+    object-fit: contain;
+    border-radius: 3px;
+    display: block;
+    opacity: 0.9;
+    transition: opacity 0.3s ease, transform 0.3s ease;
   }
-  .exp-item:hover .company-logo { filter: grayscale(0%) opacity(1); }
+  .exp-item:hover .company-logo-img { opacity: 1; transform: scale(1.03); }
   .exp-company { font-family: var(--serif); font-size: 1.2rem; font-weight: 500; color: var(--charcoal); }
   .exp-period { font-size: 0.78rem; letter-spacing: 0.05em; color: var(--slate); margin-bottom: 0.2rem; }
   .exp-location { font-size: 0.75rem; color: var(--text-muted); }
@@ -166,6 +170,16 @@
     display: block;
   }
 
+  /* Footer strip */
+  .back-btn {
+    padding: 0.75rem 2rem;
+    border: 1px solid rgba(247,243,237,0.2);
+    color: var(--sand); text-decoration: none;
+    font-size: 0.78rem; letter-spacing: 0.1em; text-transform: uppercase;
+    transition: background 0.3s ease, border-color 0.3s ease;
+  }
+  .back-btn:hover { background: rgba(247,243,237,0.08); border-color: rgba(247,243,237,0.4); }
+
   /* Reveal */
   .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.8s cubic-bezier(0.4,0,0.2,1), transform 0.8s cubic-bezier(0.4,0,0.2,1); }
   .reveal.visible { opacity: 1; transform: translateY(0); }
@@ -212,7 +226,7 @@
   </div>
 </div>
 
-<!-- 2. EXPERIENCE WITH COMPANY LOGOS -->
+<!-- 2. EXPERIENCE SECTION WITH LOCAL LOGO IMAGES -->
 <div class="exp-section">
   <h2 class="exp-title">Professional <em>Experience</em></h2>
   <div class="exp-grid">
@@ -222,7 +236,7 @@
       <div class="exp-left">
         <p class="exp-period">Sep 2026 – Present</p>
         <div class="exp-company-header">
-          <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/davita.svg" alt="DaVita Logo" class="company-logo" onerror="this.style.display='none'" />
+          <img src="images/davita.jpg" alt="DaVita Logo" class="company-logo-img" />
           <p class="exp-company">DaVita Kidney Care</p>
         </div>
         <p class="exp-location">New York, NY</p>
@@ -241,7 +255,7 @@
       <div class="exp-left">
         <p class="exp-period">Sep 2024 – Present</p>
         <div class="exp-company-header">
-          <svg class="company-logo" viewBox="0 0 24 24" fill="var(--sand)"><path d="M12 2L1 7l11 5 9-4.091V17h2V7L12 2zm0 13l-8-3.636V17l8 3.636 8-3.636v-5.636L12 15z"/></svg>
+          <img src="images/nyu.jpg" alt="NYU Logo" class="company-logo-img" />
           <p class="exp-company">New York University</p>
         </div>
         <p class="exp-location">New York, NY</p>
@@ -261,7 +275,7 @@
       <div class="exp-left">
         <p class="exp-period">Jul 2023 – Aug 2024</p>
         <div class="exp-company-header">
-          <svg class="company-logo" viewBox="0 0 24 24" fill="var(--sand)"><path d="M12 2L2 7v10l10 5 10-5V7L12 2zm0 2.8L18.6 8 12 11.2 5.4 8 12 4.8zM4 9.3l7 3.5v6.9l-7-3.5V9.3zm16 6.9l-7 3.5v-6.9l7-3.5v6.9z"/></svg>
+          <img src="images/providence.jpg" alt="Providence Logo" class="company-logo-img" />
           <p class="exp-company">Providence Global Center</p>
         </div>
         <p class="exp-location">Hyderabad, India</p>
@@ -281,7 +295,7 @@
       <div class="exp-left">
         <p class="exp-period">Jan 2023 – Jun 2023</p>
         <div class="exp-company-header">
-          <svg class="company-logo" viewBox="0 0 24 24" fill="var(--charcoal)"><path d="M12 2L2 7v10l10 5 10-5V7L12 2zm0 2.8L18.6 8 12 11.2 5.4 8 12 4.8zM4 9.3l7 3.5v6.9l-7-3.5V9.3zm16 6.9l-7 3.5v-6.9l7-3.5v6.9z"/></svg>
+          <img src="images/providence.jpg" alt="Providence Logo" class="company-logo-img" />
           <p class="exp-company">Providence Global Center</p>
         </div>
         <p class="exp-location">Hyderabad, India</p>
@@ -301,7 +315,7 @@
       <div class="exp-left">
         <p class="exp-period">Apr 2022 – Jun 2022</p>
         <div class="exp-company-header">
-          <svg class="company-logo" viewBox="0 0 24 24" fill="var(--charcoal)"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14.5v-9l6 4.5-6 4.5z"/></svg>
+          <img src="images/persistent.jpg" alt="Persistent Systems Logo" class="company-logo-img" />
           <p class="exp-company">Persistent Systems</p>
         </div>
         <p class="exp-location">Hyderabad, India</p>
